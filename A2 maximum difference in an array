@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main() {
+    int arr[] = { 7, 2, 3, 10, 4, 1, 8, 9 };
+    int size = sizeof(arr) / sizeof(arr[0]);
+
+    int max_diff = arr[1] - arr[0];
+    int min_val = arr[0];
+
+    for (int i = 1; i < size; i++) {
+        if (arr[i] - min_val > max_diff) {
+            max_diff = arr[i] - min_val;
+        }
+        if (arr[i] < min_val) {
+            min_val = arr[i];
+        }
+    }
+    printf("Maximum difference between two elements in the array is: %d", max_diff);
+    return 0;
+}
